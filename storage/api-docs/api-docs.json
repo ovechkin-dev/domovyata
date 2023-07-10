@@ -1,0 +1,262 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Домовята API",
+        "description": "Swagger OpenApi",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api": {},
+        "/api/player/items/{item}": {
+            "get": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Get an item by ID",
+                "operationId": "d6d9bdc0746860b72f6b7f7d4dd7d9c5",
+                "parameters": [
+                    {
+                        "name": "item",
+                        "in": "path",
+                        "description": "Item ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Item not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Delete an item by ID",
+                "operationId": "1ceac26530e8d41eb3bd0489f597f9d0",
+                "parameters": [
+                    {
+                        "name": "item",
+                        "in": "path",
+                        "description": "Item ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Item not found"
+                    }
+                }
+            }
+        },
+        "/api/player/items": {
+            "post": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Create a new item",
+                "operationId": "7075fd9281b8a3705a84cd2fbb6519c2",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Items"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/api/player": {
+            "post": {
+                "tags": [
+                    "Player"
+                ],
+                "summary": "Create a new player",
+                "operationId": "287a67768b206bd753d4b762bc2876a5",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Player"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/api/player/{player}": {
+            "get": {
+                "tags": [
+                    "Player"
+                ],
+                "summary": "Get a player by ID",
+                "operationId": "8a84568df38be550aa1cc16059dcc0c1",
+                "parameters": [
+                    {
+                        "name": "player",
+                        "in": "path",
+                        "description": "Player ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Player not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Player"
+                ],
+                "summary": "Update a player by ID",
+                "operationId": "626d298ca00fd4701acc5ee845e2be0f",
+                "parameters": [
+                    {
+                        "name": "player",
+                        "in": "path",
+                        "description": "Player ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Player"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Player not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Player"
+                ],
+                "summary": "Delete a player by ID",
+                "operationId": "e43952d42c47b076ad203ef547bf4036",
+                "parameters": [
+                    {
+                        "name": "player",
+                        "in": "path",
+                        "description": "Player ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Player not found"
+                    }
+                }
+            }
+        },
+        "/api/players/{player}/items": {
+            "get": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Get items of a player by ID",
+                "operationId": "d3fe7318db5146b2e8b7ba42b8c15249",
+                "parameters": [
+                    {
+                        "name": "player",
+                        "in": "path",
+                        "description": "Player ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Player not found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Items": {
+                "properties": {
+                    "player_id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "item_id": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                "type": "object"
+            },
+            "Player": {
+                "properties": {
+                    "energy": {
+                        "type": "integer",
+                        "example": 20
+                    },
+                    "position_x": {
+                        "type": "string",
+                        "example": 0
+                    },
+                    "room_position_x": {
+                        "type": "integer",
+                        "example": 0
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
