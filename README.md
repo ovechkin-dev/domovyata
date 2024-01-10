@@ -1,7 +1,6 @@
 ## Домовята API
 Laravel 10 + MySql + документация Swagger (OpenAPI 3.0) по адресу /api/documentation/
 
-Позицию игрока и его положение в комнате решил оставить в сущности игрока, т.к. в рамках данного задания нет смысла усложнять. Аутентификацию так же делать не стал, тк ее не было в задании и нет информации какая именно используется в проекте, но реализовать могу любую, например JWT.
 ![img.png](img.png)
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
